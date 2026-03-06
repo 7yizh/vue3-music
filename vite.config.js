@@ -6,13 +6,13 @@ import { fileURLToPath, URL } from 'url'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: './',//'/vue3-music/',
   plugins: [vue()],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
-  base: './',//'/vue3-music/',
   build: {
     outDir: 'docs'
   },
@@ -29,5 +29,8 @@ export default defineConfig({
   },
   define: {
     'process.env': {}  // 兼容一些仍使用 process.env 的库
-  }
+  },
+  esbuild: {
+    drop: ['console', 'debugger'], //去除console
+  },
 })
