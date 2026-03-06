@@ -6,7 +6,7 @@ import { fileURLToPath, URL } from 'url'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: './',//'/vue3-music/',
+  base: '/vue3-music/',
   plugins: [vue()],
   resolve: {
     alias: {
